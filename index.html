@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi em, người con gái anh thương ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <div id="intro">
+            <h1>Gửi em, cô gái đặc biệt của anh!</h1>
+            <p>Nhân ngày 20/10, anh có một món quà nhỏ muốn dành tặng em. Hãy mở nó ra nhé!</p>
+            <div class="gift-box" id="giftBox">
+                <div class="lid"></div>
+                <div class="box"></div>
+                <div class="heart">❤️</div>
+            </div>
+        </div>
+
+        <div id="message" class="hidden">
+            <h1>Chúc mừng ngày Phụ nữ Việt Nam!</h1>
+            <p>Anh chúc em luôn xinh đẹp, vui vẻ và hạnh phúc, không chỉ trong hôm nay mà trong tất cả những ngày sau nữa. Cảm ơn em đã xuất hiện trong cuộc đời anh.</p>
+            <p>Và... anh có điều này muốn nói...</p>
+        </div>
+
+        <div id="confession" class="hidden">
+            <h1>Làm người yêu anh nhé?</h1>
+            <p>Anh biết điều này có thể bất ngờ, nhưng tình cảm anh dành cho em là thật. Em có đồng ý cho anh cơ hội được quan tâm, chăm sóc và yêu thương em không?</p>
+            <div class="buttons">
+                <button id="yesBtn">Đồng ý 🥰</button>
+                <button id="noBtn">Không 😢</button>
+            </div>
+        </div>
+
+        <div id="thankYou" class="hidden">
+            <h1>Cảm ơn em đã đồng ý! ❤️</h1>
+            <p>Anh là người hạnh phúc nhất thế gian này! Anh sẽ liên lạc với em ngay nhé. Yêu em!</p>
+            <div class="pyro"><div class="before"></div><div class="after"></div></div>
+        </div>
+    </div>
+
+    <!-- Form ẩn để gửi dữ liệu tới Google Sheets -->
+    <form id="google-form" class="hidden">
+        <input type="text" name="entry.YOUR_ENTRY_ID" value="Đồng ý">
+    </form>
+
+    <script>
+        const giftBox = document.getElementById('giftBox');
+        const intro = document.getElementById('intro');
+        const message = document.getElementById('message');
+        const confession = document.getElementById('confession');
+        const thankYou = document.getElementById('thankYou');
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const mainContainer = document.getElementById('mainContainer');
+
+        giftBox.addEventListener('click', () => {
+            giftBox.classList.add('open');
+            setTimeout(() => {
+                intro.classList.add('hidden');
+                message.classList.remove('hidden');
+            }, 1500); // Đợi hiệu ứng mở quà xong
+            setTimeout(() => {
+                message.classList.add('hidden');
+                confession.classList.remove('hidden');
+            }, 5000); // Hiển thị lời chúc trong 3.5s
+        });
+
+        yesBtn.addEventListener('click', () => {
+            // Gửi dữ liệu form ẩn
+            submitToGoogleForm();
+            
+            confession.classList.add('hidden');
+            thankYou.classList.remove('hidden');
+            mainContainer.style.backgroundColor = '#ffe4e1'; // Đổi màu nền cho thêm phần lãng mạn
+        });
+
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        });
+
+        function submitToGoogleForm() {
+            const form = document.getElementById('google-form');
+            // !!! THAY THẾ URL VÀ ENTRY ID CỦA BẠN VÀO ĐÂY !!!
+            const formURL = 'https://docs.google.com/forms/d/e/LONG_RANDOM_STRING/formResponse';
+            const entryID = 'entry.1234567890'; // Thay bằng entry ID của bạn
+
+            const formData = new FormData(form);
+            formData.set(entryID, 'Đồng ý');
+
+            fetch(formURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Quan trọng: để không bị lỗi CORS
+            }).catch(error => console.error('Error!', error.message));
+        }
+    </script>
+</body>
+</html>
