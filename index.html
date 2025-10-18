@@ -3,36 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gửi em, người con gái anh thương ❤️</title>
+    <title>Gửi Trang yêu dấu ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container" id="mainContainer">
-        <div id="intro">
-            <h1>Gửi em, cô gái đặc biệt của anh!</h1>
-            <p>Nhân ngày 20/10, anh có một món quà nhỏ muốn dành tặng em. Hãy mở nó ra nhé!</p>
-            <div class="gift-box" id="giftBox">
-                <div class="lid"></div>
-                <div class="box"></div>
-                <div class="heart">❤️</div>
+        <!-- Cảnh 1: Lời chúc 20/10 -->
+        <div id="scene-1" class="scene">
+            <h1>Gửi Trang yêu dấu</h1>
+            <p>Hôm nay ngày 20/10, như những người đàn ông khác, anh muốn gửi gắm em những lời chúc chân thành nhất.</p>
+            <p>Chúc em luôn xinh đẹp, rạng rỡ và hạnh phúc, mong rằng mọi điều tốt đẹp nhất sẽ luôn đến với em: học tập, công việc và cuộc sống. Chúc em một ngày Phụ nữ Việt Nam thật vui vẻ, tràn ngập hoa, quà và những lời yêu thương.</p>
+            <div class="buttons">
+                <button class="continueBtn">Tiếp tục 💌</button>
             </div>
         </div>
 
-        <div id="message" class="hidden">
-            <h1>Chúc mừng ngày Phụ nữ Việt Nam!</h1>
-            <p>Anh chúc em luôn xinh đẹp, vui vẻ và hạnh phúc, không chỉ trong hôm nay mà trong tất cả những ngày sau nữa. Cảm ơn em đã xuất hiện trong cuộc đời anh.</p>
-            <p>Và... anh có điều này muốn nói...</p>
+        <!-- Cảnh 2: Hồi ức tuổi thơ -->
+        <div id="scene-2" class="scene hidden">
+            <h1>Những ngày xưa...</h1>
+            <p>Thời gian trôi qua nhanh thật, anh biết em từ lúc em lớp 1, hồi mẹ em dẫn đi sinh hoạt hè ở Đồng Tâm. Em thì bị anh gọi là "con lợn còi", em cũng gọi anh là cái gì đấy mà anh quên rồi, còn anh vẫn còn lưu giữ vết sẹo mà em cấu cho tới tận bây giờ 🙂.</p>
+            <p>Mà hồi đấy còn giật tóc đấm đá nhau cơ, anh chả nhớ rõ. Tất nhiên là mẹ em không biết 🙂.</p>
+            <div class="buttons">
+                <button class="continueBtn">Và rồi...</button>
+            </div>
         </div>
 
-        <div id="confession" class="hidden">
-            <h1>Làm người yêu anh nhé?</h1>
-            <p>Anh biết điều này có thể bất ngờ, nhưng tình cảm anh dành cho em là thật. Em có đồng ý cho anh cơ hội được quan tâm, chăm sóc và yêu thương em không?</p>
+        <!-- Cảnh 3: Gặp lại lớp 7 -->
+        <div id="scene-3" class="scene hidden">
+            <h1>Gặp lại</h1>
+            <p>Đến lúc lớp 7 anh mới vô tình gặp lại em, và hình như là anh vẫn tiếp tục trêu em tiếp thì phải 🙂, lúc đấy khéo trêu gái ngấm vào máu rồi. Giờ thì tịt rồi không còn được như ngày xưa 🙂.</p>
+            <p>Nhờ đó mình cũng được 1 thời gian tiếp xúc với nhau, quen lại với nhau, mặc dù lúc đấy có thêm 1 em nữa 🙂 anh sẽ không nhắc lại. Lúc đấy là anh bị mọi người nói nhiều quá nên anh dừng không tiếp xúc 2 đứa nữa.</p>
+            <div class="buttons">
+                <button class="continueBtn">Sau đó...</button>
+            </div>
+        </div>
+
+        <!-- Cảnh 4: Thời Covid -->
+        <div id="scene-4" class="scene hidden">
+            <h1>Thời Covid</h1>
+            <p>Xong đến thời covid, lại vô tình gặp bạn Trang trong lúc đánh bóng thôi, và mình nghĩ là khoảng thời gian này có lẽ đã làm chúng ta cũng gọi là khá thân thiết đấy. Và lúc đấy những tin nhắn đầu tiên đã được gửi cho nhau, thời gian đó, có một cái gì đó rất thuần khiết từ cả hai bên.</p>
+            <p>Nhưng chúng mình đã dừng lại một cách khó hiểu. Thực sự lúc đấy mình cũng không biết mình nghĩ gì...</p>
+            <div class="buttons">
+                <button class="continueBtn">Những năm tháng xa cách</button>
+            </div>
+        </div>
+
+        <!-- Cảnh 5: Gặp lại trên xe bus -->
+        <div id="scene-5" class="scene hidden">
+            <h1>Ngại ngùng</h1>
+            <p>Rồi những khoảng thời gian sau, đôi lúc anh với em cũng gặp lại nhau như trên xe buýt hoặc lâu lâu anh về thì thấy có đánh cầu lông nhưng cũng chỉ dừng lại ở những lời chào hỏi. Anh lúc đấy thực sự cũng không biết nói gì với em.</p>
+            <p>Anh không thể hiện cảm xúc thật của anh bao giờ... Nhưng mà lúc đấy là anh cũng siêu ngại, một phần vì những lời hứa hẹn với em, một phần vì chưa dám đối diện với em.</p>
+            <div class="buttons">
+                <button class="continueBtn">Và định mệnh...</button>
+            </div>
+        </div>
+
+        <!-- Cảnh 6: Dịp A80 -->
+        <div id="scene-6" class="scene hidden">
+            <h1>Trùng hợp và Rung động</h1>
+            <p>Và rồi, một điều không tưởng xảy ra, dịp A80, em vào đại học... Thật trùng hợp mà, một lần nữa, mình lại có cơ hội gặp nhau ở những dấu mốc quan trọng của cuộc đời. Tròn 4 năm rồi, và một lần nữa, anh với em lại có thể trò chuyện, không còn vô tư, hồn nhiên như trước, mà thay vào đó là sự nhẹ nhàng, xen lẫn chút ngượng ngùng.</p>
+            <p>Và thật sự trái tim anh lại đập rộn ràng như thuở trước kia. Thời gian tiếp xúc không dài nhưng đã thôi thúc cảm xúc sâu bên trong anh, một cái gì đó rất khó tả.</p>
+            <div class="buttons">
+                <button class="continueBtn">Điều anh muốn nói...</button>
+            </div>
+        </div>
+
+        <!-- Cảnh 7: Lời tỏ tình -->
+        <div id="scene-7" class="scene hidden">
+            <h1>Gửi em,</h1>
+            <p>Anh đã bắt đầu nhớ nhung, anh đã bắt đầu muốn quan tâm, chăm sóc, yêu thương em. Ở cạnh bên em làm xoa dịu những áp lực, làm cho anh có cảm giác thực sự bình yên.</p>
+            <p>Anh yêu em và anh muốn được quan tâm, yêu thương, chăm sóc, bên cạnh, ân cần với em. Anh có thể không quá lãng mạn, ngọt ngào nhưng anh tin rằng tấm lòng của anh, tình cảm của anh không thua kém bất kì ai.</p>
+            <h2>Em đồng ý làm người yêu anh nhé?</h2>
             <div class="buttons">
                 <button id="yesBtn">Đồng ý 🥰</button>
                 <button id="noBtn">Không 😢</button>
             </div>
         </div>
 
+        <!-- Cảnh 8: Cảm ơn -->
         <div id="thankYou" class="hidden">
             <h1>Cảm ơn em đã đồng ý! ❤️</h1>
             <p>Anh là người hạnh phúc nhất thế gian này! Anh sẽ liên lạc với em ngay nhé. Yêu em!</p>
@@ -40,55 +88,49 @@
         </div>
     </div>
 
-    <!-- Form ẩn để gửi dữ liệu tới Google Sheets -->
     <form id="google-form" class="hidden">
         <input type="text" name="entry.YOUR_ENTRY_ID" value="Đồng ý">
     </form>
 
     <script>
-        const giftBox = document.getElementById('giftBox');
-        const intro = document.getElementById('intro');
-        const message = document.getElementById('message');
-        const confession = document.getElementById('confession');
+        const scenes = document.querySelectorAll('.scene');
+        const continueBtns = document.querySelectorAll('.continueBtn');
         const thankYou = document.getElementById('thankYou');
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
         const mainContainer = document.getElementById('mainContainer');
+        let currentScene = 0;
 
-        giftBox.addEventListener('click', () => {
-            giftBox.classList.add('open');
-            setTimeout(() => {
-                intro.classList.add('hidden');
-                message.classList.remove('hidden');
-            }, 1500); // Đợi hiệu ứng mở quà xong
-            setTimeout(() => {
-                message.classList.add('hidden');
-                confession.classList.remove('hidden');
-            }, 5000); // Hiển thị lời chúc trong 3.5s
+        continueBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (currentScene < scenes.length - 1) {
+                    scenes[currentScene].classList.add('hidden');
+                    currentScene++;
+                    scenes[currentScene].classList.remove('hidden');
+                }
+            });
         });
 
         yesBtn.addEventListener('click', () => {
-            // Gửi dữ liệu form ẩn
             submitToGoogleForm();
-            
-            confession.classList.add('hidden');
+            scenes[currentScene].classList.add('hidden');
             thankYou.classList.remove('hidden');
-            mainContainer.style.backgroundColor = '#ffe4e1'; // Đổi màu nền cho thêm phần lãng mạn
+            mainContainer.style.backgroundColor = '#ffe4e1';
         });
 
         noBtn.addEventListener('mouseover', () => {
             const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
             const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
             noBtn.style.position = 'absolute';
-            noBtn.style.left = `${x}px`;
-            noBtn.style.top = `${y}px`;
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
         });
 
         function submitToGoogleForm() {
             const form = document.getElementById('google-form');
-            // !!! THAY THẾ URL VÀ ENTRY ID CỦA BẠN VÀO ĐÂY !!!
+            // !!! QUAN TRỌNG: THAY THẾ URL VÀ ENTRY ID CỦA BẠN VÀO ĐÂY !!!
             const formURL = 'https://docs.google.com/forms/d/e/LONG_RANDOM_STRING/formResponse';
-            const entryID = 'entry.1234567890'; // Thay bằng entry ID của bạn
+            const entryID = 'entry.1234567890'; // Thay bằng entry ID thật của bạn
 
             const formData = new FormData(form);
             formData.set(entryID, 'Đồng ý');
@@ -96,7 +138,7 @@
             fetch(formURL, {
                 method: 'POST',
                 body: formData,
-                mode: 'no-cors' // Quan trọng: để không bị lỗi CORS
+                mode: 'no-cors'
             }).catch(error => console.error('Error!', error.message));
         }
     </script>
