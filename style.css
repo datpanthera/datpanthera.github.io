@@ -26,21 +26,53 @@ body {
     max-width: 90%;
     width: 400px;
     transition: all 0.5s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation cho các cảnh chuyển tiếp */
+.scene-transition {
+    animation: fadeInUp 0.8s ease-out;
+}
+/* Animation cho cảnh đầu tiên */
+.initial-entrance {
+    animation: scaleIn 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 h1 {
     color: var(--primary-color);
     font-size: 24px;
+    /* Xóa margin-bottom để kiểm soát khoảng cách tốt hơn trong JS */
     margin-bottom: 20px;
 }
 
 p {
     font-size: 16px;
     line-height: 1.6;
+    min-height: 1.6em; /* Giữ khoảng trống để không bị giật layout khi chữ hiện ra */
+}
+
+/* Hiệu ứng con trỏ gõ chữ */
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: var(--text-color);
+    animation: blink 0.7s infinite;
+    margin-left: 3px;
+    vertical-align: text-bottom;
 }
 
 .hidden {
-    display: none;
+    /* Thay đổi để hỗ trợ animation */
+    opacity: 0;
+    pointer-events: none;
+    display: none !important; /* Vẫn cần để ẩn hoàn toàn */
+}
+
+/* Lớp tiện ích cho animation tiêu đề */
+.title-animate {
+    animation: fadeInDown 0.8s ease-out forwards;
 }
 
 .gift-box {
@@ -133,6 +165,11 @@ button {
     background-color: #e0e0e0;
 }
 
+.continueBtn {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
 /* Hiệu ứng pháo hoa */
 .pyro > .before, .pyro > .after {
     position: absolute;
@@ -160,4 +197,100 @@ button {
     40%, 59.9% { margin-top: 20%; margin-left: 70%; }
     60%, 79.9% { margin-top: 30%; margin-left: 20%; }
     80%, 99.9% { margin-top: 30%; margin-left: 80%; }
+}
+
+/* Animation cho tiêu đề */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation cho các cảnh */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation cho cảnh đầu tiên */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Animation cho bó hoa */
+.flower-bouquet {
+    font-size: 100px;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: show-flower 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+    animation-delay: 0.2s; /* Hiện ra sau 1 chút */
+}
+
+@keyframes show-flower {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hiệu ứng trái tim rung động */
+.pulsing-heart {
+    display: inline-block;
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* Hiệu ứng mưa tim */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.heart-fall {
+    position: absolute;
+    top: -10vh;
+    font-size: 2rem;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+#thankYou h1 {
+    text-shadow: 0 0 10px rgba(255, 122, 122, 0.7);
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
 }
