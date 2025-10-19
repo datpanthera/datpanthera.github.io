@@ -30,7 +30,7 @@ body {
     opacity: 1;
     transform: translateY(0);
     position: relative; /* Cần cho việc đặt background giả */
-    max-height: 85vh; /* Giới hạn chiều cao để vừa với màn hình điện thoại */
+    max-height: 90vh; /* Giới hạn chiều cao để vừa với màn hình điện thoại */
     overflow-y: auto; /* Cho phép cuộn bên trong thư khi nội dung dài */
     box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng */
 }
