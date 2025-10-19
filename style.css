@@ -60,13 +60,13 @@ body {
 
 h1 {
     color: var(--primary-color);
-    font-size: 30px; /* Giảm nhẹ kích thước tiêu đề */
+    font-size: 26px; /* Giảm nhẹ kích thước tiêu đề */
     /* Xóa margin-bottom để kiểm soát khoảng cách tốt hơn trong JS */
     margin-bottom: 10px;
 }
 
 p {
-    font-size: 18px; /* Giảm nhẹ kích thước chữ */
+    font-size: 15px; /* Giảm nhẹ kích thước chữ */
     line-height: 1.6;
     min-height: 1.6em; /* Giữ khoảng trống để không bị giật layout khi chữ hiện ra */
 }
@@ -174,7 +174,7 @@ p {
 .continue-text {
     display: inline-block;
     margin-top: 10px;
-    font-size: 20px; /* Giảm nhẹ kích thước chữ */
+    font-size: 16px; /* Giảm nhẹ kích thước chữ */
     color: var(--text-color);
     cursor: default; /* Chuột mặc định, không phải dạng click */
 }
