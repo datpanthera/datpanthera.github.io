@@ -6,7 +6,6 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
@@ -15,6 +14,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
+    font-family: 'Dancing Script', cursive; /* Đặt font viết tay làm font mặc định cho toàn trang */
     text-align: center;
 }
 
@@ -22,12 +22,28 @@ body {
     background-color: white;
     padding: 30px 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* Thay đổi để giống bức thư hơn */
+    border: 1px solid rgba(0, 0, 0, 0.1);
     max-width: 90%;
     width: 400px;
     transition: all 0.5s ease-in-out;
     opacity: 1;
     transform: translateY(0);
+    position: relative; /* Cần cho việc đặt background giả */
+}
+
+/* Thêm hình nền cho container */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('letter-bg.png');
+    background-size: cover;
+    opacity: 0.07; /* Giảm độ mờ để chữ dễ đọc hơn */
+    border-radius: 20px;
 }
 
 /* Animation cho các cảnh chuyển tiếp */
@@ -41,13 +57,13 @@ body {
 
 h1 {
     color: var(--primary-color);
-    font-size: 24px;
+    font-size: 32px; /* Tăng kích thước cho font mới */
     /* Xóa margin-bottom để kiểm soát khoảng cách tốt hơn trong JS */
     margin-bottom: 20px;
 }
 
 p {
-    font-size: 16px;
+    font-size: 20px; /* Tăng kích thước chữ cho font viết tay dễ đọc hơn */
     line-height: 1.6;
     min-height: 1.6em; /* Giữ khoảng trống để không bị giật layout khi chữ hiện ra */
 }
@@ -65,9 +81,9 @@ p {
 
 .hidden {
     /* Thay đổi để hỗ trợ animation */
+    display: none; /* Ẩn khỏi luồng trang */
     opacity: 0;
-    pointer-events: none;
-    display: none !important; /* Vẫn cần để ẩn hoàn toàn */
+    /* pointer-events: none; */
 }
 
 /* Lớp tiện ích cho animation tiêu đề */
@@ -130,29 +146,15 @@ p {
 
 .buttons {
     margin-top: 30px;
-    display: flex;
-    justify-content: center;
+    display: block; /* Chuyển sang block để căn lề */
+    text-align: right; /* Căn lề phải cho đẹp */
     gap: 15px;
 }
 
-button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
-}
-
-#yesBtn {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-#yesBtn:hover {
-    background-color: #ff5c5c;
-    transform: scale(1.05);
+/* Căn giữa các nút ở cảnh tỏ tình */
+#scene-7 .buttons {
+    text-align: center;
+    display: flex;
 }
 
 #noBtn {
@@ -165,38 +167,13 @@ button {
     background-color: #e0e0e0;
 }
 
-.continueBtn {
-    background-color: var(--secondary-color);
+/* Style cho text chuyển cảnh */
+.continue-text {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 22px;
     color: var(--text-color);
-}
-
-/* Hiệu ứng pháo hoa */
-.pyro > .before, .pyro > .after {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    box-shadow: -120px -218.66667px #ff0000, 248px -16.66667px #00ff00, 190px 16.33333px #0000ff, -113px -227.66667px #ff00ff, -157px -12.66667px #ffff00, -47px -170.66667px #00ffff;
-    animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
-}
-
-.pyro > .after {
-    animation-delay: 1.25s, 1.25s, 1.25s;
-    animation-duration: 1.25s, 1.25s, 6.25s;
-}
-
-@keyframes bang {
-    from { box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; }
-}
-@keyframes gravity {
-    to { transform: translateY(100px); opacity: 0; }
-}
-@keyframes position {
-    0%, 19.9% { margin-top: 10%; margin-left: 40%; }
-    20%, 39.9% { margin-top: 40%; margin-left: 30%; }
-    40%, 59.9% { margin-top: 20%; margin-left: 70%; }
-    60%, 79.9% { margin-top: 30%; margin-left: 20%; }
-    80%, 99.9% { margin-top: 30%; margin-left: 80%; }
+    cursor: default; /* Chuột mặc định, không phải dạng click */
 }
 
 /* Animation cho tiêu đề */
@@ -252,8 +229,11 @@ button {
 
 /* Hiệu ứng trái tim rung động */
 .pulsing-heart {
-    display: inline-block;
+    display: inline-block; /* Để có thể áp dụng transform */
     animation: pulse 1.2s infinite;
+    width: 35px; /* Đặt kích thước cho trái tim */
+    height: auto;
+    vertical-align: middle; /* Căn giữa với dòng chữ */
 }
 
 @keyframes pulse {
@@ -262,35 +242,137 @@ button {
     100% { transform: scale(1); }
 }
 
-/* Hiệu ứng mưa tim */
-#hearts-container {
-    position: fixed;
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Style cho ảnh kỷ niệm */
+.memory-photo {
+    max-width: 80%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.5s; /* Hiện ra sau tiêu đề */
+}
+
+/* --- Phong cách cho phong bì --- */
+#envelope-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: fixed; /* Luôn ở trên cùng */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 10000;
+    background-color: var(--bg-color); /* Khớp với nền body */
+    transition: opacity 0.5s ease-out 0.5s; /* Mờ đi sau khi mở */
+}
+
+#envelope-container.open {
+    opacity: 0;
     pointer-events: none;
-    overflow: hidden;
-    z-index: 9999;
 }
 
-.heart-fall {
+.envelope {
+    position: relative;
+    width: 280px;
+    height: 175px;
+    background-color: #ffcbcb;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    /* Thêm một lớp giả để tạo phần thân trước của thư */
+}
+
+.envelope::before {
+    content: '';
     position: absolute;
-    top: -10vh;
-    font-size: 2rem;
-    animation: fall linear forwards;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffb3b3;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
+    z-index: 2;
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(110vh);
-    }
+.envelope-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffcbcb; /* Màu nền của phần thân sau */
+    z-index: 1;
 }
 
-#thankYou h1 {
-    text-shadow: 0 0 10px rgba(255, 122, 122, 0.7);
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffb3b3; /* Màu của nắp thư, đậm hơn một chút */
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out;
+    clip-path: polygon(0 0, 100% 0, 50% 55%); /* Điều chỉnh nắp thư một chút */
+    z-index: 3;
 }
 
-@keyframes blink {
-    50% { opacity: 0; }
+#envelope-container.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope-heart {
+    position: absolute;
+    top: 45%; /* Nâng trái tim lên một chút */
+    left: 41%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+    z-index: 4; /* Luôn ở trên cùng */
+    animation: pulse 2s infinite ease-in-out; /* Thêm hiệu ứng rung nhẹ */
+}
+
+.envelope-heart img {
+    width: 50px; /* Đặt kích thước cho ảnh trái tim trên phong bì */
+    height: auto;
+}
+
+#envelope-container.open .envelope-heart {
+    opacity: 0;
+}
+
+.envelope-instruction {
+    margin-top: 20px;
+    font-size: 16px;
+    color: var(--text-color);
+    animation: pulse 2s infinite;
+}
+
+/* --- Nút điều khiển nhạc --- */
+#music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001; /* Luôn ở trên cùng */
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--secondary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    padding: 0; /* Reset padding để icon căn giữa */
+    display: none; /* Ẩn nút điều khiển nhạc */
 }

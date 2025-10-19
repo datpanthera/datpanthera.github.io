@@ -3,92 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gửi Trang yêu dấu ❤️</title>
+    <title>Bức thư gửi cho em ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container" id="mainContainer">
+    <!-- Nút điều khiển nhạc nền -->
+    <button id="music-control">🎵</button>
+
+    <!-- Nhạc nền -->
+    <audio id="background-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Cấu trúc cho phong bì ban đầu -->
+    <div id="envelope-container">
+        <div class="envelope">
+            <!-- Thêm tấm ảnh sẽ trượt ra -->
+            <div class="envelope-flap"></div>
+            <div class="envelope-body"></div>
+            <div class="envelope-heart"><img src="heart.png" alt="Trái tim"></div>
+        </div>
+        <p class="envelope-instruction">Click để mở thư</p>
+    </div>
+
+    <div class="container" id="mainContainer" style="visibility: hidden; opacity: 0;">
         <!-- Cảnh 1: Lời chúc 20/10 -->
         <div id="scene-1" class="scene">
-            <h1>Gửi Trang yêu dấu,</h1>
+            <h1>🌸 Gửi Trang yêu dấu</h1>
             <p>Hôm nay là ngày 20/10, như bao người đàn ông khác, anh muốn gửi đến em những lời chúc chân thành nhất.</p>
             <p>Chúc em luôn xinh đẹp, rạng rỡ và hạnh phúc. Mong rằng mọi điều tốt đẹp nhất sẽ đến với em — trong học tập, công việc và cuộc sống. Chúc em có một ngày Phụ nữ Việt Nam thật vui vẻ, tràn ngập hoa, quà và những lời yêu thương.</p>
+            <p>Nhân dịp này, anh cũng muốn nói ra điều mà anh đã giữ trong lòng suốt bấy lâu nay.</p>
             <div class="buttons">
-                <button class="continueBtn">Tiếp tục 💌</button>
+                <span class="continue-text">Tiếp tục &rarr;</span>
             </div>
         </div>
 
         <!-- Cảnh 2: Hồi ức tuổi thơ -->
         <div id="scene-2" class="scene hidden">
-            <h1>Những ngày xưa...</h1>
-            <p>Nhân dịp này, anh cũng muốn nói ra điều mà anh đã giữ trong lòng suốt bấy lâu. Thời gian trôi thật nhanh. Anh biết em từ khi em còn học lớp 1, hồi mẹ em dẫn em đi sinh hoạt hè ở Đồng Tâm. Khi đó anh gọi em là “con lợn còi”, còn em cũng gọi anh là cái gì đó mà anh quên mất rồi. Anh vẫn còn giữ vết sẹo mà em cấu cho đến tận bây giờ, không biết khi ấy anh đã trêu em chuyện gì nữa.</p>
-            <p>Hồi đó còn có cả màn giật tóc, đánh nhau, mẹ em chắc cũng không biết đâu.</p>
+            <h1>🌸 Tuổi thơ hồn nhiên</h1>
+            <p>Thời gian trôi thật nhanh. Anh biết em từ khi em còn học lớp 1, hồi mẹ em dẫn đi sinh hoạt hè ở Đồng Tâm. Khi đó anh gọi em là “con lợn còi”, còn em cũng gọi anh là cái gì đó mà anh quên mất rồi. Hồi đó đấm đá chí choé nhau suốt, anh thì thù dai nhớ như in bị em cấu chảy máu.</p>
             <div class="buttons">
-                <button class="continueBtn">Và rồi...</button>
+                <span class="continue-text">Gặp lại... &rarr;</span>
             </div>
         </div>
 
         <!-- Cảnh 3: Gặp lại lớp 7 -->
         <div id="scene-3" class="scene hidden">
-            <h1>Gặp lại</h1>
-            <p>Đến tận lúc em lớp 6, em mới nhớ lại anh — khi tình cờ gặp nhau. Hình như lúc đó anh vẫn tiếp tục trêu em thì phải, chắc là cái tật trêu gái ngấm vào máu rồi. Giờ thì hết rồi, không còn như ngày xưa nữa.</p>
-            <p>Nhưng nhờ vậy mà hai đứa có cơ hội nói chuyện, quen lại, dù lúc ấy cũng có thêm một người khác nữa. Lúc đó anh bị mọi người nói nhiều quá nên anh chủ động dừng lại, không tiếp xúc với cả hai nữa.</p>
+            <h1>✨ Lần gặp lại đầu tiên</h1>
+            <p>Đến tận lúc em lớp 6, em mới quen lại anh — khi tình cờ gặp nhau mặc dù em chả nhớ gì cả. Hình như lúc đó anh vẫn tiếp tục trêu em thì phải, chắc là cái tật trêu gái ngấm vào máu rồi. Giờ thì hết rồi, không còn như ngày xưa nữa nhưng nhờ vậy mà hai đứa có cơ hội trò chuyện với nhau.</p>
             <div class="buttons">
-                <button class="continueBtn">Sau đó...</button>
+                <span class="continue-text">Sau đó... &rarr;</span>
             </div>
         </div>
 
         <!-- Cảnh 4: Thời Covid -->
         <div id="scene-4" class="scene hidden">
-            <h1>Thời Covid</h1>
+            <h1>😷 Thời Covid</h1>
             <p>Rồi đến thời Covid, mình lại vô tình gặp nhau khi đi đánh bóng. Có lẽ khoảng thời gian đó khiến hai đứa trở nên thân thiết hơn bao giờ hết. Từ đó, những tin nhắn đầu tiên được gửi đi — và anh cảm nhận được một điều gì đó rất trong sáng, rất tự nhiên từ cả hai. Gần đây anh có đọc lại những tin nhắn ngày ấy, và thật sự không ngờ rằng mình từng có thể chia sẻ mọi thứ một cách vô tư như vậy.</p>
-            <p>Giờ đây, anh rất khó để làm được điều đó với bất kỳ ai khác. Nhưng rồi, chúng mình lại dừng lại — một cách khó hiểu, do anh cũng không tiếp tục chia sẻ hay nhắn gì với em nữa. Khi ấy anh cũng giống như em bây giờ, vừa mới vào đại học.</p>
+            <p>Giờ đây, anh rất khó để làm được điều đó với bất kỳ ai khác. Nhưng rồi, chúng mình lại dừng lại — một cách khó hiểu, do anh cũng không tiếp tục chia sẻ hay nhắn gì với em nữa.</p>
             <div class="buttons">
-                <button class="continueBtn">Những năm tháng xa cách</button>
+                <span class="continue-text">Thời gian sau đó... &rarr;</span>
             </div>
         </div>
 
         <!-- Cảnh 5: Gặp lại trên xe bus -->
         <div id="scene-5" class="scene hidden">
-            <h1>Ngại ngùng</h1>
+            <h1>💭 Khoảng lặng giữa hai ta</h1>
             <p>Sau đó, đôi lúc anh và em vẫn gặp nhau, như trên xe buýt hay khi em đi đánh cầu lông, nhưng cũng chỉ dừng lại ở những lời chào hỏi. Thật lòng, anh không biết phải nói gì với em.</p>
             <p>Anh vốn không giỏi thể hiện cảm xúc thật, thường giữ thái độ trung lập khi ở ngoài xã hội, cho đến tận bây giờ vẫn vậy. Nhưng lúc ấy, anh ngại lắm — một phần vì những lời hứa với em, một phần vì chưa đủ can đảm để đối diện với em.</p>
             <div class="buttons">
-                <button class="continueBtn">Và định mệnh...</button>
+                <span class="continue-text">Và định mệnh... &rarr;</span>
             </div>
         </div>
 
         <!-- Cảnh 6: Dịp A80 -->
         <div id="scene-6" class="scene hidden">
-            <h1>Trùng hợp và Rung động</h1>
-            <p>Rồi một điều không ngờ đã xảy ra — dịp A80, em vào đại học. Có thể em chưa biết, anh cũng vừa tốt nghiệp đại học. Thật trùng hợp, một lần nữa chúng ta lại gặp nhau ở những dấu mốc quan trọng của cuộc đời. Tròn bốn năm rồi, và thêm một lần nữa, anh với em lại có thể trò chuyện — không còn vô tư, hồn nhiên như trước mà thay vào đó là sự nhẹ nhàng, xen lẫn chút ngượng ngùng.</p>
-            <p>Thật sự, trái tim anh lại đập rộn ràng như thuở ban đầu.</p>
+            <h1>💫 Duyên phận lại mỉm cười</h1>
+            <p>Rồi một điều không ngờ đã xảy ra — dịp A80, dip quan trọng của đất nước, em vào đại học, anh cũng vừa tốt nghiệp đại học. Thật trùng hợp, một lần nữa chúng ta lại gặp nhau ở những dấu mốc quan trọng của cuộc đời. Tròn bốn năm rồi, và thêm một lần nữa, anh với em lại có thể trò chuyện — không còn vô tư, hồn nhiên như trước mà thay vào đó là sự nhẹ nhàng, xen lẫn chút ngượng ngùng. Thật sự, trái tim anh lại đập rộn ràng một lần nữa.</p>
             <div class="buttons">
-                <button class="continueBtn">Điều anh muốn nói...</button>
+                <span class="continue-text">Lời anh muốn nói... &rarr;</span>
             </div>
         </div>
 
         <!-- Cảnh 7: Lời tỏ tình -->
         <div id="scene-7" class="scene hidden">
-            <h1>Gửi em,</h1>
-            <p>Thời gian tiếp xúc không dài, nhưng đủ để khơi dậy trong anh những cảm xúc rất thật, rất khó tả. Anh bắt đầu nhớ, bắt đầu muốn quan tâm, chăm sóc, yêu thương em — như một bản năng. Ban đầu anh nghĩ chỉ mình anh cảm thấy vậy, nhưng khi nhận ra em cũng đang đón nhận, anh thực sự rất vui.</p>
-            <p>Cuộc sống của anh là một chuỗi thử thách và áp lực, lúc nào cũng khiến anh rất mệt mỏi, nhưng chỉ cần ở cạnh em, mọi thứ như dịu lại, bình yên hơn rất nhiều.</p>
-            <p>Anh yêu em, và anh muốn được quan tâm, chăm sóc, yêu thương em. Anh có thể không quá lãng mạn hay ngọt ngào, anh cũng không giỏi thể hiện cảm xúc, nhưng anh tin rằng tình cảm và tấm lòng của anh không thua kém bất kỳ ai.</p>
+            <h1>❤️ Lời anh muốn nói</h1>
+            <p>Thời gian bên nhau không dài, nhưng đủ để khơi dậy trong anh những cảm xúc rất thật, rất khó tả. Anh bắt đầu nhớ, bắt đầu muốn quan tâm, chăm sóc, yêu thương em — như một bản năng. Ban đầu anh nghĩ chỉ mình anh cảm thấy vậy, nhưng khi nhận ra em cũng đang đón nhận, anh thực sự rất vui.</p>
+            <p>Cuộc sống của anh là chuỗi ngày bận rộn và nhiều áp lực, đôi khi khiến anh mệt mỏi, nhưng chỉ cần ở cạnh em, mọi thứ như dịu lại, nhẹ nhõm và bình yên hơn bao giờ hết. Được thấy em vui, anh cũng cảm thấy rất hạnh phúc.</p>
+            <p>Anh yêu em, và anh chỉ mong được ở bên để quan tâm, chăm sóc, yêu thương em mỗi ngày. Anh có thể không quá lãng mạn, cũng chẳng giỏi nói những lời ngọt ngào, nhưng anh tin rằng tình cảm, tấm lòng và sự chân thành của anh là thật lòng — và đủ để em cảm nhận được. Có thể em cho rằng anh nói hơi quá nhưng thời gian sẽ chứng minh tất cả.</p>
+            <p>Anh biết cũng có thể còn quá sớm nhưng cũng có thể đã quá muộn, nhưng anh không muốn hối tiếc gì nữa.</p>
             <h2>Em đồng ý làm người yêu anh nhé?</h2>
             <div class="buttons">
-                <button id="yesBtn">Đồng ý 🥰</button>
-                <button id="noBtn">Không 😢</button>
             </div>
         </div>
 
-        <!-- Cảnh 8: Cảm ơn -->
-        <div id="thankYou" class="hidden">
-            <div id="hearts-container"></div>
-            <div class="flower-bouquet">💐</div>
-            <h1>Cảm ơn em, em thật tuyệt vời. <span class="pulsing-heart">❤️</span></h1>
-            <p>Anh sẽ không để em phải hối hận về quyết định hôm nay đâu.</p>
-            <div class="pyro"><div class="before"></div><div class="after"></div></div>
-        </div>
     </div>
 
     <form id="google-form" class="hidden">
@@ -97,45 +108,19 @@
 
     <script>
         const scenes = Array.from(document.querySelectorAll('.scene'));
-        const continueBtns = document.querySelectorAll('.continueBtn');
-        const thankYou = document.getElementById('thankYou');
-        const yesBtn = document.getElementById('yesBtn');
-        const noBtn = document.getElementById('noBtn');
+        const continueTexts = document.querySelectorAll('.continue-text');
         const mainContainer = document.getElementById('mainContainer');
+        const envelopeContainer = document.getElementById('envelope-container');
+        const music = document.getElementById('background-music');
+        const musicControlBtn = document.getElementById('music-control');
+        let isTyping = false;
+        let autoAdvanceTimer = null;
         let currentScene = 0;
         
-        continueBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (currentScene < scenes.length - 1) {
-                    const current = scenes[currentScene];
-                    current.classList.add('hidden');
-                    clearCountdown();
-                    advanceScene();
-                }
-            });
-        });
         function moveToNextScene() {
             if (isTyping || currentScene >= scenes.length - 1) return;
             advanceScene();
         }
-
-        yesBtn.addEventListener('click', () => {
-            submitToGoogleForm();
-            const lastScene = scenes[currentScene];
-            lastScene.classList.add('hidden');
-            
-            thankYou.classList.remove('hidden'); // Hiển thị màn hình cảm ơn để animation hoa bắt đầu
-            mainContainer.style.backgroundColor = '#ffe4e1'; // Đổi màu nền
-            createFallingHearts();
-        });
-
-        noBtn.addEventListener('mouseover', () => {
-            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-            noBtn.style.position = 'absolute';
-            noBtn.style.left = x + 'px';
-            noBtn.style.top = y + 'px';
-        });
 
         function submitToGoogleForm() {
             const form = document.getElementById('google-form');
@@ -152,26 +137,10 @@
             }).catch(error => console.error('Error!', error.message));
         }
 
-        function createFallingHearts() {
-            const container = document.getElementById('hearts-container');
-            const heartsCount = 30; // Số lượng trái tim
-            for (let i = 0; i < heartsCount; i++) {
-                const heart = document.createElement('div');
-                heart.classList.add('heart-fall');
-                heart.innerText = '❤️';
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.animationDuration = (Math.random() * 2 + 3) + 's'; // Thời gian rơi từ 3-5s
-                heart.style.animationDelay = Math.random() * 4 + 's'; // Xuất hiện ngẫu nhiên trong 4s đầu
-                heart.style.fontSize = (Math.random() * 1 + 1) + 'rem'; // Kích thước ngẫu nhiên
-                
-                container.appendChild(heart);
-            }
-        }
-
         // --- Logic cho hiệu ứng gõ chữ ---
 
         // Hàm gõ chữ
-        function typeEffect(element, text, speed = 40) {
+        function typeEffect(element, text, speed = 50) { // Tăng thời gian chờ mặc định
             return new Promise(resolve => {
                 let i = 0;
                 element.innerHTML = '';
@@ -204,13 +173,13 @@
 
             // Chuẩn bị các phần tử cần gõ chữ
             const elementsToType = [];
-            paragraphs.forEach(p => elementsToType.push({ el: p, text: p.textContent, speed: 40 }));
-            if (h2) elementsToType.push({ el: h2, text: h2.textContent, speed: 50 });
+            paragraphs.forEach(p => elementsToType.push({ el: p, text: p.textContent, speed: 50 })); // Chậm lại từ 40ms -> 50ms
+            if (h2) elementsToType.push({ el: h2, text: h2.textContent, speed: 63 }); // Chậm lại từ 50ms -> ~63ms
 
             // Ẩn nút và xóa nội dung để chuẩn bị gõ
             if (buttonContainer) {
                 buttonContainer.style.opacity = '0';
-                buttonContainer.style.pointerEvents = 'none';
+                // buttonContainer.style.pointerEvents = 'none';
             }
             elementsToType.forEach(item => item.el.innerHTML = '');
 
@@ -227,18 +196,18 @@
 
             isTyping = false;
 
-            // Hiện nút sau khi gõ xong
-            if (buttonContainer) {
-                buttonContainer.style.transition = 'opacity 0.5s';
-                buttonContainer.style.opacity = '1';
-                buttonContainer.style.pointerEvents = 'auto';
-
-                // Nếu là cảnh có nút "Tiếp tục", bắt đầu đếm ngược
-                const continueBtn = buttonContainer.querySelector('.continueBtn');
-                if (continueBtn) {
-                    startCountdown(continueBtn);
-                }
+            // Sau khi gõ chữ xong, kiểm tra xem nên làm gì tiếp theo
+            if (buttonContainer) { // Nếu là các cảnh có text "Tiếp tục"
+                const continueText = buttonContainer.querySelector('.continue-text');
+                if (continueText) showButtonsAndStartCountdown(buttonContainer, continueText);
             }
+        }
+
+        function showButtonsAndStartCountdown(buttonContainer, continueText) {
+            buttonContainer.style.transition = 'opacity 0.5s';
+            buttonContainer.style.opacity = '1';
+            buttonContainer.style.pointerEvents = 'auto';
+            startCountdown(continueText);
         }
 
         function clearCountdown() {
@@ -249,15 +218,15 @@
         }
 
         // Hàm đếm ngược tự động chuyển cảnh
-        function startCountdown(button) {
+        function startCountdown(element) {
             let countdown = 3;
-            const originalText = button.textContent;
-            button.textContent = `${originalText} (${countdown})`;
+            const originalText = element.textContent.replace(/ \(\d\)$/, '').replace(' →', ''); // Lấy text gốc
+            element.textContent = `${originalText} (${countdown}) →`;
 
             autoAdvanceTimer = setInterval(() => {
                 countdown--;
                 if (countdown > 0) {
-                    button.textContent = `${originalText} (${countdown})`;
+                    element.textContent = `${originalText} (${countdown}) →`;
                 } else {
                     clearCountdown();
                     moveToNextScene();
@@ -268,10 +237,12 @@
         function advanceScene() {
             if (currentScene >= scenes.length - 1) return;
 
-            scenes[currentScene].classList.add('hidden');
+            scenes[currentScene].style.display = 'none'; // Ẩn cảnh hiện tại
             currentScene++;
             const nextScene = scenes[currentScene];
             
+            // Hiển thị cảnh tiếp theo trước khi chạy animation
+            nextScene.style.display = 'block';
             nextScene.classList.remove('hidden');
             mainContainer.classList.remove('initial-entrance', 'scene-transition');
             void mainContainer.offsetWidth; // Trigger reflow to restart animation
@@ -280,17 +251,50 @@
             startTypingForScene(nextScene);
         }
 
+        // --- Logic cho nhạc nền ---
+        function setupMusic() {
+            musicControlBtn.addEventListener('click', () => {
+                if (music.paused) {
+                    music.play();
+                    musicControlBtn.textContent = '🎵';
+                } else {
+                    music.pause();
+                    musicControlBtn.textContent = '🔇';
+                }
+            });
+        }
+
         // Chạy hiệu ứng khi trang được tải
         document.addEventListener('DOMContentLoaded', () => {
-            const scene1 = document.getElementById('scene-1');
             // Ẩn tất cả các cảnh trừ cảnh đầu tiên
             scenes.forEach((scene, index) => {
-                if (index !== 0) scene.classList.add('hidden');
+                if (index !== 0) {
+                    scene.classList.add('hidden');
+                    scene.style.display = 'none';
+                }
             });
-            
-            mainContainer.classList.add('initial-entrance');
-            scene1.classList.remove('hidden');
-            startTypingForScene(scene1);
+
+            // Thêm sự kiện click cho phong bì
+            envelopeContainer.addEventListener('click', () => {
+                // Thêm class 'open' để chạy animation mở nắp
+                envelopeContainer.classList.add('open');
+
+                // Bắt đầu phát nhạc khi người dùng tương tác lần đầu
+                music.play().catch(e => console.log("Autoplay was prevented."));
+
+                // Sau khi nắp mở, ẩn phong bì và hiện bức thư
+                setTimeout(() => {
+                    envelopeContainer.style.display = 'none';
+
+                    mainContainer.style.visibility = 'visible';
+                    mainContainer.style.opacity = '1';
+                    mainContainer.classList.add('initial-entrance');
+                    startTypingForScene(scenes[0]);
+                }, 1000); // Giảm thời gian chờ sau khi bỏ hiệu ứng .letter
+            }, { once: true }); // Chỉ cho phép click một lần
+
+            // Cài đặt nút điều khiển nhạc
+            setupMusic();
         });
     </script>
 </body>
