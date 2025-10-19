@@ -20,16 +20,19 @@ body {
 
 .container {
     background-color: white;
-    padding: 30px 40px;
+    padding: 20px 20px;
     border-radius: 20px;
     /* Thay đổi để giống bức thư hơn */
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    max-width: 90%;
-    width: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    max-width: 95%; /* Cho phép thư rộng hơn trên màn hình nhỏ */
+    width: 450px; /* Tăng nhẹ kích thước thư trên màn hình lớn */
     transition: all 0.5s ease-in-out;
     opacity: 1;
     transform: translateY(0);
     position: relative; /* Cần cho việc đặt background giả */
+    max-height: 85vh; /* Giới hạn chiều cao để vừa với màn hình điện thoại */
+    overflow-y: auto; /* Cho phép cuộn bên trong thư khi nội dung dài */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng */
 }
 
 /* Thêm hình nền cho container */
@@ -57,13 +60,13 @@ body {
 
 h1 {
     color: var(--primary-color);
-    font-size: 32px; /* Tăng kích thước cho font mới */
+    font-size: 30px; /* Giảm nhẹ kích thước tiêu đề */
     /* Xóa margin-bottom để kiểm soát khoảng cách tốt hơn trong JS */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 p {
-    font-size: 20px; /* Tăng kích thước chữ cho font viết tay dễ đọc hơn */
+    font-size: 18px; /* Giảm nhẹ kích thước chữ */
     line-height: 1.6;
     min-height: 1.6em; /* Giữ khoảng trống để không bị giật layout khi chữ hiện ra */
 }
@@ -171,7 +174,7 @@ p {
 .continue-text {
     display: inline-block;
     margin-top: 10px;
-    font-size: 22px;
+    font-size: 20px; /* Giảm nhẹ kích thước chữ */
     color: var(--text-color);
     cursor: default; /* Chuột mặc định, không phải dạng click */
 }
