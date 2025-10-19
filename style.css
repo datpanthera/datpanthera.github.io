@@ -20,7 +20,7 @@ body {
 
 .container {
     background-color: white;
-    padding: 20px 20px;
+    padding: 10px 25px 20px 25px; /* Giảm padding trên để đẩy title lên */
     border-radius: 20px;
     /* Thay đổi để giống bức thư hơn */
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -67,8 +67,8 @@ h1 {
 
 p {
     font-size: 15px; /* Giảm nhẹ kích thước chữ */
-    line-height: 1.6;
-    min-height: 1.6em; /* Giữ khoảng trống để không bị giật layout khi chữ hiện ra */
+    line-height: 1.4;
+    min-height: 1.4em; /* Giữ khoảng trống để không bị giật layout khi chữ hiện ra */
 }
 
 /* Hiệu ứng con trỏ gõ chữ */
